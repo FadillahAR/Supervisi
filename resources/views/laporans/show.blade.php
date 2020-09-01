@@ -1,4 +1,4 @@
-@extends('materis.layout')
+@extends('laporans.layout')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,7 +6,7 @@
                 <h2> Lihat</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-warning" href="{{ route('materis.index') }}"> Back</a>
+                <a class="btn btn-warning" href="{{ route('laporans.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -15,31 +15,31 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Materi:</strong>
-                    {{ $materi->materi }}
+                {{ $laporan->materi }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Mapel:</strong>
-                {{ $materi->mapel }}
+                {{ $laporan->mapel }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Rombel:</strong>
-                {{ $materi->rombel }}
+                {{ $laporan->rombel }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Author:</strong>
-                {{ $materi->author }}
+                {{ $laporan->author }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>File:</strong>
-                {{ $materi->file }}
+                <strong>Deskripsi:</strong>
+                {{ $laporan->deskripsi }}
             </div>
         </div>
     </div>

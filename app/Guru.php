@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Supervisor extends Model
+class Guru extends Model
 {
-    
     protected $fillable = [
-        'nama', 'alamat', 'jk'
+        'nip', 'nama', 'alamat','jk'
     ];
 }

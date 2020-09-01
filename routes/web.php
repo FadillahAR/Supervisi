@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::resource('materis','MateriController');
 Route::resource('supervisors','SupervisorController');
+Route::resource('gurus','GuruController');
+Route::resource('laporans','LaporanController');
+Route::resource('jadwals','JadwalController');
 
 Auth::routes();
 

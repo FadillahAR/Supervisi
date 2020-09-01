@@ -7,7 +7,7 @@
                 <h2>Edit materi</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('materis.index') }}"> Back</a>
+                <a class="btn btn-warning" href="{{ route('materis.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="file" name="file">
-                <label class="custom-file-label" for="file">Choose file</label>
+                <label class="custom-file-label" for="file">{{ $materi->file }}</label>
             </div>
         </div>
         <script type="application/javascript">

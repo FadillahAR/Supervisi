@@ -29,48 +29,25 @@
    
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Materi :</span>
+                <span class="input-group-text" >Nama :</span>
             </div>
-            <input type="text" class="form-control" name="materi" aria-label="Default" aria-describedby="materi" value="{{ $supervisor->materi }}">
+            <input type="text" class="form-control" name="nama" aria-label="Default" aria-describedby="nama" value="{{ $supervisor->nama }}">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="mapel">Mapel :</label>
-            </div>      
-            <select name="mapel" id="mapel" class="custom-select">
-                 <option selected disabled>{{ $supervisor->mapel }}</option>
-                 <option value="Matematika">Matematika</option>
-                 <option value="English">English</option>
-                 <option value="Indonesia">Bahasa Indonesia</option>
-            </select>
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="rombel">Rombel :</label>
+                <span class="input-group-text" >Jenis Kelamin :</span>
             </div>
-            <select name="rombel" id="rombel" class="custom-select">
-                 <option selected disabled>{{ $supervisor->rombel }}</option>
-                 <option value="10">X</option>
-                 <option value="11">XI</option>
-                 <option value="12">XII</option>
-            </select>
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" >Author :</span>
-            </div>
-            <input type="text" class="form-control" name="author" aria-label="Default" aria-describedby="author" value="{{ $supervisor->materi }}">
+            <input type="text" class="form-control" name="jk" aria-label="Default" aria-describedby="jk" value="{{ $supervisor->jk }}">
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Deskripsi</strong>
-                    <textarea type="text" name="deskripsi" value="{{ $supervisor->deskripsi }}" class="form-control"></textarea>
-                </div>
+            <div class="form-group">
+                <strong>Alamat : </strong>
+                <textarea type="text" name="alamat" class="form-control">{{ $supervisor->alamat }}</textarea>
             </div>
+        </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-warning">Submit</button>
             </div>

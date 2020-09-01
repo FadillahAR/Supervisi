@@ -1,13 +1,13 @@
-@extends('supervisors.layout')
+@extends('gurus.layout')
   
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Form Supervisi </h2>
+            <h2>Tambah guru</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-warning" href="{{ route('supervisors.index') }}"> Back</a>
+            <a class="btn btn-warning" href="{{ route('gurus.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -23,21 +23,21 @@
     </div>
 @endif
    
-<form action="{{ route('supervisors.store') }}" method="POST">
+<form action="{{ route('gurus.store') }}" method="POST">
     @csrf
   
-     <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Nama :</span>
+                <span class="input-group-text" >NIP :</span>
             </div>
-            <input type="text" class="form-control" name="nama" aria-label="Default" aria-describedby="nama">
+            <input type="text" class="form-control" name="nip" aria-label="Default" aria-describedby="nip">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Jenis Kelamin :</span>
+                <label class="input-group-text" for="nama">Nama :</label>
             </div>
-            <input type="text" class="form-control" name="jk" aria-label="Default" aria-describedby="jk">
+            <input type="text" class="form-control" name="nama" aria-label="Default" aria-describedby="nama">
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -46,6 +46,14 @@
                 <textarea type="text" name="alamat" class="form-control"></textarea>
             </div>
         </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Jenis Kelamin :</span>
+            </div>
+            <input type="text" class="form-control" name="jk" aria-label="Default" aria-describedby="jk">
+        </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-warning">Submit</button>
         </div>

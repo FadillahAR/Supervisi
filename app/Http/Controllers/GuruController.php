@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Supervisor;
-use App\Materi;
+use App\Guru;
 use Illuminate\Http\Request;
 
-class SupervisorController extends Controller
+class GuruController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class SupervisorController extends Controller
      */
     public function index()
     {
-        $supervisors = Supervisor::latest()->paginate(5);
+        $gurus = Guru::latest()->paginate(5);
   
-        return view('supervisors.index',compact('supervisors'))
+        return view('gurus.index',compact('gurus'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -28,7 +27,7 @@ class SupervisorController extends Controller
      */
     public function create()
     {
-        return view('supervisors.create');
+        return view('gurus.create');
     }
 
     /**
@@ -40,71 +39,73 @@ class SupervisorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nip' => 'required',
             'nama' => 'required',
             'alamat' => 'required',
             'jk' => 'required',
         ]);
   
-        Supervisor::create($request->all());
+        Guru::create($request->all());
    
-        return redirect()->route('supervisors.index')
-                        ->with('success','Supervisor berhasil dibuat');
+        return redirect()->route('gurus.index')
+                        ->with('success','guru created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Supervisor  $supervisor
+     * @param  \App\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function show(Supervisor $supervisor)
+    public function show(Guru $guru)
     {
-        return view('supervisors.show',compact('supervisor'));
+        return view('gurus.show',compact('guru'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Supervisor  $supervisor
+     * @param  \App\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function edit(Supervisor $supervisor)
+    public function edit(Guru $guru)
     {
-        return view('supervisors.edit',compact('supervisor'));
+        return view('gurus.edit',compact('guru'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Supervisor  $supervisor
+     * @param  \App\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Supervisor $supervisor)
+    public function update(Request $request, Guru $guru)
     {
         $request->validate([
+            'nip' => 'required',
             'nama' => 'required',
             'alamat' => 'required',
             'jk' => 'required',
         ]);
   
-        $supervisor->update($request->all());
+        $guru->update($request->all());
   
-        return redirect()->route('supervisors.index')
-                        ->with('success','Supervisor berhasil diperbarui');
+        return redirect()->route('gurus.index')
+                        ->with('success','guru updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Supervisor  $supervisor
+     * @param  \App\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Supervisor $supervisor)
+    public function destroy(Guru $guru)
     {
-        $supervisor->delete();
+        $guru->delete();
   
-        return redirect()->route('supervisors.index')
-                        ->with('success','Supervisor berhasil dihapus');
+        return redirect()->route('gurus.index')
+                        ->with('success','guru deleted successfully');
     }
 }
