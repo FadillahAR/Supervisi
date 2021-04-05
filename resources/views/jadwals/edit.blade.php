@@ -1,4 +1,4 @@
-@extends('jadwals.layout')
+@extends('halaman.halaman')
    
 @section('content')
     <div class="row">
@@ -11,6 +11,7 @@
             </div>
         </div>
     </div>
+    <br>
    
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -27,32 +28,29 @@
         @csrf
         @method('PUT')
 
-        <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" name="tanggal" value="{{ $jadwal->tanggal }}"/>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text">Tanggal :</label>
+                <input type="date" class="form-control" name="tanggal" value="{{ $jadwal->tanggal }}">
             </div>
         </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker({
-                    format: "YYYY-MM-DD HH:mm:ss"
-                });
-            });
-        </script>
-    </div>
-</div>
 
-        <div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-warning">Submit</button>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="guru">Guru :</label>
             </div>
+            <input type="text" class="form-control" name="guru" value="{{ $jadwal->guru }}">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" >Supervisor :</label>
+            </div>
+            <input type="text" class="form-control" name="supervisor" value="{{ $jadwal->supervisor }}">
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-warning">Submit</button>
         </div>
    
     </form>

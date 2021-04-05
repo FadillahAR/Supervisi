@@ -15,14 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/supervisis', 'SupervisiController@index');
+Route::get('/supervisis/cetak', 'SupervisiController@cetak');
+
+
+Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
 Route::resource('materis','MateriController');
-Route::resource('supervisors','SupervisorController');
-Route::resource('gurus','GuruController');
-Route::resource('laporans','LaporanController');
+Route::resource('supervisis','SupervisiController');
 Route::resource('jadwals','JadwalController');
 
-Auth::routes();
+Route::group(['middleware' => ['auth', 'role:1,2,3,4']], function (){
+    
+    Route::get('/halaman', function () {
+        return view('halaman.halaman');
+    });
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/supervisor', 'HomeController@supervisor')->name('supervisor');
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('title');

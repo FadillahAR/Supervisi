@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Jadwal;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'password', 'title'
+        'name', 'username', 'password', 'role', 'jk', 'alamat'
     ];
 
     /**
@@ -33,5 +34,6 @@ class User extends Authenticatable
      *
      * @var array
      */
+
    
 }

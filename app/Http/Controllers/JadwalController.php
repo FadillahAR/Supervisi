@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Jadwal;
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      *
      * @return \Illuminate\Http\Response
-     */
+x     */
     public function index()
     {
         $jadwals = Jadwal::latest()->paginate(5);
@@ -26,8 +26,9 @@ class JadwalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('jadwals.create');
+    {   
+        $users = User::all();
+        return view('jadwals.create', compact('users',$users));
     }
 
     /**

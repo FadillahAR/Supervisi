@@ -1,16 +1,18 @@
-@extends('materis.layout')
+@extends('halaman.halaman')
  
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Supervisi Digital</h2>
+                <h2>Form Materi</h2>
             </div>
+    
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('materis.create') }}">Tambah Materi Baru</a>
             </div>
         </div>
     </div>
+    <br>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -39,8 +41,6 @@
             <td>
                 <form action="{{ route('materis.destroy',$materi->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('materis.show',$materi->id) }}">Show</a>
-    
                     <a class="btn btn-warning" href="{{ route('materis.edit',$materi->id) }}">Edit</a>
    
                     @csrf
@@ -49,6 +49,21 @@
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
+        </tr>
+        @endforeach
+    </table>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Tanggal & Waktu</th>
+            <th>Guru</th>
+            <th>Supervisor</th>
+        </tr>
+        @foreach ($jadwals as $jadwal)
+        <tr>
+            <td>{{ $jadwal->tanggal }}</td>
+            <td>{{ $jadwal->guru }}</td>
+            <td>{{ $jadwal->supervisor }}</td>
         </tr>
         @endforeach
     </table>

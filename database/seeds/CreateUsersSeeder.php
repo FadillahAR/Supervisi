@@ -14,25 +14,40 @@ class CreateUsersSeeder extends Seeder
     {
         $user = [
             [
-               'name'=>'admin',
-               'username'=>'admin',
-                'title'=>'admin',
+               'name'=>'Ahmad Zainudin',
+               'username'=>'ahmd',
                'password'=> bcrypt('123'),
+               'role'=> 1,
+               'jk'=> 'L',
+               'alamat'=> 'kp',
             ],
             [
-               'name'=>'user',
-               'username'=>'user',
-                'title'=>'user',
+               'name'=>'Bambang sudrajat',
+               'username'=>'bg',
                'password'=> bcrypt('123'),
+               'role'=> 2,
+               'jk'=> 'L',
+               'alamat'=> 'kp',
             ],
             [
-                'name'=>'supervisor',
-                'username'=>'supervisor',
-                 'title'=>'supervisor',
+                'name'=>'ucup sunarya',
+                'username'=>'ucp',
                 'password'=> bcrypt('123'),
+                'role'=> 3,
+                'jk'=> 'L',
+                'alamat'=> 'kp',
              ],
+             [
+                'name'=>'Ujang sulaiman',
+                'username'=>'ujg',
+                'password'=> bcrypt('123'),
+                'role'=> 4,
+                'jk'=> 'L',
+                'alamat'=> 'kp',
+             ],
+            
         ];
-
+  
         foreach ($user as $key => $value) {
             User::create($value);
         }

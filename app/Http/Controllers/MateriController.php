@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Materi;
+use App\Jadwal;
 use Illuminate\Http\Request;
 
 class MateriController extends Controller
@@ -15,8 +16,9 @@ class MateriController extends Controller
     public function index()
     {
         $materis = Materi::latest()->paginate(5);
+        $jadwals = Jadwal::all();
   
-        return view('materis.index',compact('materis'))
+        return view('materis.index',compact('materis','jadwals'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

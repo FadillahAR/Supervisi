@@ -11,6 +11,7 @@
             </div>
         </div>
     </div>
+    <br>
    
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -29,7 +30,7 @@
    
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Materi :</span>
+                <label class="input-group-text" >Materi :</label>
             </div>
             <input type="text" class="form-control" name="materi" aria-label="Default" aria-describedby="materi" value="{{ $materi->materi }}">
         </div>
@@ -60,7 +61,7 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Author :</span>
+                <label class="input-group-text" >Author :</label>
             </div>
             <input type="text" class="form-control" name="author" aria-label="Default" aria-describedby="author" value="{{ $materi->materi }}">
         </div>
@@ -68,7 +69,7 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Upload : </span>
+                <label class="input-group-text">Upload : </label>
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="file" name="file">

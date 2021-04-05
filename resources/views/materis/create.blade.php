@@ -1,4 +1,4 @@
-@extends('materis.layout')
+@extends('halaman.halaman')
   
 @section('content')
 <div class="row">
@@ -11,6 +11,7 @@
         </div>
     </div>
 </div>
+<br>
    
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -28,9 +29,9 @@
   
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Materi :</span>
+            <label class="input-group-text">Materi :</label>
             </div>
-            <input type="text" class="form-control" name="materi" aria-label="Default" aria-describedby="materi">
+            <input type="text" class="form-control" name="materi" >
         </div>
 
         <div class="input-group mb-3">
@@ -38,7 +39,7 @@
                 <label class="input-group-text" for="mapel">Mapel :</label>
             </div>
             <select name="mapel" id="mapel" class="custom-select">
-                 <option selected></option>
+                 <option selected hidden disable></option>
                  <option value="Matematika">Matematika</option>
                  <option value="English">English</option>
                  <option value="Indonesia">Bahasa Indonesia</option>
@@ -50,7 +51,7 @@
                 <label class="input-group-text" for="rombel">Rombel :</label>
             </div>
             <select name="rombel" id="rombel" class="custom-select">
-                `<option selected></option>
+                `<option selected hidden disable></option>
                  <option value="10">X</option>
                  <option value="11">XI</option>
                  <option value="12">XII</option>
@@ -59,7 +60,7 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" >Author :</span>
+                <label class="input-group-text" >Author :</label>
             </div>
             <input type="text" class="form-control" name="author" aria-label="Default" aria-describedby="author">
         </div>
@@ -67,7 +68,7 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Upload : </span>
+                <label class="input-group-text">Upload : </label>
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="file" name="file">
